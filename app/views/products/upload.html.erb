@@ -1,65 +1,33 @@
-<style>
-  #customers {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
+<p id="notice"><%= notice %></p>
 
-  #customers td, #customers th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
+<h4>Listando Produtos</h4>
 
-  #customers tr:nth-child(even){background-color: #f2f2f2;}
-
-  #customers tr:hover {background-color: #ddd;}
-
-  #customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #4CAF50;
-    color: white;
-  }
-  .alert-success {
-    background-color: white;
-    color: #4CAF50;
-    text-align: left;
-  }
-</style>
-
-<% if flash[:notice] -%>
-    <div class = "alert-success"><%= flash[:notice] %></div>
-<% end %>
-
-<h1>File contents uploaded</h1>
-
-<table id="customers">
-  <div style="overflow-x:auto;">
-    <thead>
+<table class="table">
+  <thead>
     <tr>
-      <th>Comprador</th>
-      <th>Descrição</th>
-      <th>Preço Unitário</th>
-      <th>Quantidade</th>
-      <th>Endereço</th>
-      <th>Fornecedor</th>
-      <th colspan="3"></th>
+        <th>Comprador</th>
+        <th>Descrição</th>
+        <th>Preço Unitário</th>
+        <th>Quantidade</th>
+        <th>Endereço</th>
+        <th>Fornecedor</th>
+        <th colspan="3"></th>
     </tr>
-    </thead>
-    <tbody>
+  </thead>
+  <tbody>
   <% @products.each do |product| %>
-      <tr>
-        <td><%= product.buyer %></td>
-        <td><%= product.description %></td>
-        <td><%= product.unit_price %></td>
-        <td><%= product.amount %></td>
-        <td><%= product.address %></td>
-        <td><%= product.provider %></td>
-      </tr><br>
-     </tbody>
+    <tr>
+      <td><%= product.buyer %></td>
+      <td><%= product.description %></td>
+      <td><%= product.unit_price %></td>
+      <td><%= product.amount %></td>
+      <td><%= product.address %></td>
+      <td><%= product.provider %></td>
+    </tr>
   <% end %>
+  </tbody>
 </table>
-</div>
+
 <br>
-<%= link_to 'New Import', products_import_path %>
+
+<%= link_to 'Importa Novamente', products_import_path %>

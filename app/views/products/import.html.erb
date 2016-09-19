@@ -1,11 +1,11 @@
-<h1>Upload new file</h1>
+<h4>Importar novo arquivo</h4>
 
 <%= form_tag '/products/upload', multipart: true do %>
     <p>
       <%= file_field_tag 'import[file]' %>
     </p>
     <p>
-      <%= submit_tag "Upload" %>
+      <%= submit_tag "Importar" %>
     </p>
 <% end %>
 
