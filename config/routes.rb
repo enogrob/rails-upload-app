@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'products/import'
 
-  get 'products/upload'
+  post 'products/upload'
+
+  root :to => 'products#import'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
