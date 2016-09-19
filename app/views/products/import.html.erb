@@ -2,10 +2,12 @@
 
 <%= form_tag '/products/upload', multipart: true do %>
     <p>
+    <div class="form-group">
       <%= file_field_tag 'import[file]' %>
+    </div>
     </p>
     <p>
-      <%= submit_tag "Importar" %>
+      <%= submit_tag "Importar", class: "btn btn-primary" %>
     </p>
 <% end %>
 
